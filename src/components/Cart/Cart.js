@@ -2,17 +2,16 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { removeFromCart } from '../../redux/actions/cartActions';
 
-const Cart = (props) => {
-    
-    console.log(props);
+const Cart = (props) => { 
     const {cart,removeFromCart}=props
+    console.log(cart);
     return (
         <div>
             <h1>This is Cart:{cart.length}</h1>
            
              <ul>
                 {
-                 cart.map(id => <li key={id} >{id} <button onClick={()=>removeFromCart(id)}>x</button></li>)
+                 cart.map(pd => <li key={pd.cartID} >  {pd.productID} {pd.name} <button onClick={()=>removeFromCart(pd.cartID)}>   X</button></li>)
                   }
              </ul>  
           
