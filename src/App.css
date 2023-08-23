@@ -1,38 +1,25 @@
 .App {
+  display: flex; /* Use flexbox to create a row layout */
+}
+.left-side {
+
   text-align: center;
+  flex: 3; /* Take up 75% of available space */
+  padding: 20px; /* Add some padding for spacing */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.right-side {
+  flex: 1; /* Take up 25% of available space */
+  padding: 20px; /* Add some padding for spacing */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* Media query for mobile screens */
+@media (max-width: 768px) {
+  .left-side {
+    flex: 2; /* Take up 50% of available space on mobile screens */
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+  .right-side {
+    flex: 2; /* Take up 50% of available space on mobile screens */
   }
 }

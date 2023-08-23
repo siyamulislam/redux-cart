@@ -7,12 +7,12 @@ const Shop = (props) => {
     const {products,addToCart}=props; 
     return (
         <div>
-                <h2>This is Shop</h2>
+                <h2>Shop</h2>
                
                {
                     products.map(pd =>  <Product key={pd.id} product= {pd}
                         addToCart={addToCart}
-                        
+                    
                          ></Product>)
                }
         </div>

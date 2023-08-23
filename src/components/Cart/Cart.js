@@ -1,17 +1,19 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { removeFromCart } from '../../redux/actions/cartActions';
+import './Cart.css'
 
 const Cart = (props) => {
     const { cart, removeFromCart } = props
     console.log(cart);
     return (
         <div>
-            <h1>This is Cart:{cart.length}</h1>
+            <h2 sty
+            >Cart: {cart.length}</h2>
 
             <ul>
                 {
-                    cart.map(pd => <li key={pd.cartID} >  {pd.productID} {pd.name} <button onClick={() => removeFromCart(pd.cartID)}>   X</button></li>)
+                    cart.map(pd => <li className='cartItemStyle' key={pd.cartID} >  {pd.productID} {pd.name} <button onClick={() => removeFromCart(pd.cartID)}>   X</button></li>)
                 }
             </ul>
 
